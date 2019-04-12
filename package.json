@@ -1,0 +1,30 @@
+{
+  "name": "i18n-echart",
+  "version": "1.0.0",
+  "description": "My perfect Nuxt.js project",
+  "author": "FlyingDance1995",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
+    "build": "nuxt build",
+    "start": "cross-env NODE_ENV=production node server/index.js",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.3.6",
+    "cross-env": "^5.2.0",
+    "echarts": "^4.2.1",
+    "express": "^4.16.4",
+    "iview": "^3.1.5",
+    "nuxt": "^2.4.0",
+    "socket.io": "^2.2.0",
+    "vue-echarts": "^4.0.1",
+    "vue-i18n": "^8.10.0"
+  },
+  "devDependencies": {
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
+    "nodemon": "^1.18.9",
+    "webpack-node-externals": "^1.7.2"
+  }
+}
