@@ -1,3 +1,4 @@
+require('dotenv').config();
 const pkg = require('./package');
 const nodeExternals = require('webpack-node-externals');
 
@@ -7,14 +8,15 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: pkg.name,
+    title: process.env.THEME === 'mainnet' ? `Main Nuxt Project` : `Test Nuxt project`,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      // { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: process.env.THEME === 'mainnet' ? `/favicon-mainnet.ico` : `/favicon-testnet.ico` }
     ]
   },
 
@@ -31,7 +33,7 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    `~assets/less/mainnet-style.less`
+      `~assets/less/${process.env.THEME}-style.less`
   ],
 
   /*
@@ -53,6 +55,7 @@ module.exports = {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/dotenv'
   ],
   /*
   ** Axios module configuration

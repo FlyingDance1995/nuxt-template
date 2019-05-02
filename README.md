@@ -1,4 +1,4 @@
-# i18n-echart
+# 4network
 
 > My perfect Nuxt.js project
 
